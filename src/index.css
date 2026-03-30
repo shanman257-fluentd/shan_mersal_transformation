@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-headline: "Manrope", sans-serif;
+
+  --color-background: #0b1326;
+  --color-primary: #a2c9ff;
+  --color-primary-container: #0062ac;
+  --color-secondary: #d2bbff;
+  --color-secondary-container: #6001d1;
+  --color-tertiary: #ffb77d;
+  --color-tertiary-container: #934e00;
+  --color-surface: #0b1326;
+  --color-surface-container: #171f33;
+  --color-surface-container-low: #131b2e;
+  --color-surface-container-high: #222a3d;
+  --color-surface-container-highest: #2d3449;
+  --color-on-surface: #dae2fd;
+  --color-on-surface-variant: #c7c4da;
+  --color-outline-variant: #464557;
+  --color-error: #ffb4ab;
+  --color-error-container: #93000a;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-sans antialiased;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(162, 201, 255, 0.05) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(210, 187, 255, 0.05) 0px, transparent 50%);
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-surface-container/60 backdrop-blur-xl border-t border-l border-white/10;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+  }
+}
